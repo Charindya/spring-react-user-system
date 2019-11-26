@@ -11,9 +11,8 @@ export class AddUser extends React.Component {
         super(props);
 
         this.state = {
-            email: '',
-            username: '',
-            password: '',
+            id: '',
+            description: '',
             success: ''
         }
     }
@@ -28,7 +27,7 @@ export class AddUser extends React.Component {
         e.preventDefault();
         console.log("hi");
         console.log(this.state);
-        axios.post("/user", this.state)
+        axios.post("/listItem", this.state)
             .then(response=> {
                 console.log(response);
                 this.setState({success: "true"});
@@ -43,12 +42,12 @@ export class AddUser extends React.Component {
     };
 
     render(){
-        const {email, username, password, success} = this.state;
+        const {id, description, success} = this.state;
         if(success=="true"){
             console.log("supperino");
             return(<div>
                 <Alert variant="success" bg-color="dark">
-                    <Alert.Heading>User Successfully added!</Alert.Heading>
+                    <Alert.Heading>Item successfully added to wishlist! Get shopping!</Alert.Heading>
                 </Alert>
                 <header className="App-header">
 
@@ -76,12 +75,10 @@ export class AddUser extends React.Component {
                         <form onSubmit={this.submitHandler}>
                             {/*<div className="form-group">*/}
                             <h3>Add User</h3>
-                            <input type="email" className="form-control" name="email" value={email} onChange={this.changeHandler}
+                            <input type="email" className="form-control" name="id" value={id} onChange={this.changeHandler}
                                    aria-describedby="emailHelp" placeholder="Enter email"/><br/>
-                            <input type="text" className="form-control" name="username" value={username} onChange={this.changeHandler}
+                            <input type="text" className="form-control" name="description" value={description} onChange={this.changeHandler}
                                    aria-describedby="emailHelp" placeholder="Enter username"/><br/>
-                            <input type="text" className="form-control" name="password" value={password} onChange={this.changeHandler}
-                                   aria-describedby="emailHelp" placeholder="Enter password"/><br/>
                             <button type="submit" className="btn btn-success">Submit</button>
                             {/*</div>*/}
                         </form>
@@ -105,12 +102,10 @@ export class AddUser extends React.Component {
                 <form onSubmit={this.submitHandler}>
                     {/*<div className="form-group">*/}
                         <h3>Add User</h3>
-                        <input type="email" className="form-control" name="email" value={email} onChange={this.changeHandler}
+                        <input type="text" className="form-control" name="id" value={id} onChange={this.changeHandler}
                                aria-describedby="emailHelp" placeholder="Enter email"/><br/>
-                        <input type="text" className="form-control" name="username" value={username} onChange={this.changeHandler}
+                        <input type="text" className="form-control" name="description" value={description} onChange={this.changeHandler}
                                aria-describedby="emailHelp" placeholder="Enter username"/><br/>
-                        <input type="text" className="form-control" name="password" value={password} onChange={this.changeHandler}
-                               aria-describedby="emailHelp" placeholder="Enter password"/><br/>
                         <button type="submit" className="btn btn-success">Submit</button>
                     {/*</div>*/}
                 </form>

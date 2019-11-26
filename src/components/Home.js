@@ -21,7 +21,9 @@ export class Home extends React.Component {
     // }
 
     componentDidMount() {
-        fetch('/users')
+        document.body.classList.add("backgrundyus");
+
+        fetch('/listItems')
             .then(response => response.json())
             .then(json => this.setState({ isLoading: false, groups:json }));
 
@@ -32,7 +34,7 @@ export class Home extends React.Component {
         e.preventDefault();
         console.log("lo");
         console.log(e.target.value);
-        axios.delete("user?uemail=" + e.target.value)
+        axios.delete("listItem?id=" + e.target.value)
             .then(res => {
                 console.log(res);
                 console.log(res.data);
@@ -52,40 +54,41 @@ export class Home extends React.Component {
         }
         return (
             <div>
-                <Navbar expand="lg" variant="dark" bg="dark">
+                <Navbar expand="lg" variant="dark" bg="primary">
                     <Container>
                         <Navbar.Brand href="#">Christmas Checklist</Navbar.Brand>
                     </Container>
                 </Navbar>
-                <header className="App-header">
-                    <Link to="/adduser"><Button color="success">Add User</Button></Link><br/>
-                    <div className="App-intro">
-                        <h2>Users</h2>
-                        <Table className="table table-dark">
-                            <tr>
-                                <th>Name</th>
-                                <th>Username</th>
-                                <th>Password</th>
-                                <th>Update</th>
-                                <th>Delete</th>
-                            </tr>
+                <br/>
+                <div style={{marginLeft: '1200px'}}>
+                        <Link to="/adduser"><Button color="success">Add User</Button></Link>
+                    </div><br/>
+                    <div className="App-intro" >
+                        <br/>
+                        <Table className="table table-light ">
+                            <thead style={{backgroundColor: "#323E5B", color:"white"}}>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Description</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
                             {groups.map(item => (
                                 <tr>
-                                    <td key={item.email}>{item.email}</td>
-                                    <td key={item.email}>{item.username}</td>
-                                    <td key={item.email}>{item.password}</td>
+                                    <td key={item.id}>{item.id}</td>
+                                    <td key={item.id}>{item.description}</td>
                                     <td ><Link to={{
                                         pathname: "/edituser",
                                         state: {
-                                            name: item.email
-                                        }}} ><Button color="warning">Update</Button></Link><br/></td>
-                                    <td ><Button  onClick={this.deleteUser}  value={item.email} color="danger">Delete</Button></td>
+                                            name: item.id
+                                        }}} ><Button color="primary">Update</Button></Link><br/></td>
+                                    <td ><Button  onClick={this.deleteUser}  value={item.id} color="secondary" variant="primary">Delete</Button></td>
                                 </tr>
                             ))}
                         </Table>
 
                     </div>
-                </header>
             </div>
         )
     }

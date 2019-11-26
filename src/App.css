@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: white;
 }
 
 .App-logo {
@@ -19,4 +20,36 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger{
+  background-color: #09d3ac;
+  border-color: #09d3ac;
+
+}
+
+.btn-primary{
+  background-color: #323E5B!important;
+  border-color: #323E5B!important;
+}
+
+/*.btn-success {*/
+  /*background-color: #07C75A;*/
+  /*border-color: #07C75A;*/
+/*}*/
+
+
+.bg-primary{
+  background-color: #252D44!important;
+}
+
+.backgrundyus {
+  background-color: white;
+}
+
+.table-light{
+  background-color: #FCFCFC!important;
+  color: #282c34!important;
 }

@@ -11,18 +11,17 @@ export class UpdateUser extends React.Component {
         super(props);
 
         this.state = {
-            email: '',
-            username: '',
-            password: '',
+            id: '',
+            description: '',
             groups: []
         }
     }
 
     componentDidMount() {
         const {name}  = this.props.location.state;
-        fetch('/user?uemail='+name)
+        fetch('/listItem?id='+name)
             .then(response => response.json())
-            .then(json => this.setState({  email:json.email, username:json.username, password:json.password, groups:json }));
+            .then(json => this.setState({  id:json.id, description:json.description,  groups:json }));
         console.log("yooyoyo");
         console.log(name);
     }
@@ -36,8 +35,8 @@ export class UpdateUser extends React.Component {
     updateHandler = e => {
         e.preventDefault();
         console.log("hi");
-        console.log(this.state);
-        axios.put("/user/"+this.state.email, this.state)
+        console.log("sup" + this.state.id);
+        axios.put("/listItem/"+this.state.id, this.state)
             .then(response=> {
                 console.log(response);
                 this.setState({success: "true"});
@@ -52,7 +51,7 @@ export class UpdateUser extends React.Component {
     };
 
     render(){
-        const {groups, email, username, password} = this.state;
+        const {groups, id, description} = this.state;
 
         return(
             <div>
@@ -69,11 +68,9 @@ export class UpdateUser extends React.Component {
                 <form onSubmit={this.updateHandler}>
                     {/*<div className="form-group">*/}
                         <h3>Update User</h3>
-                        <input type="email" className="form-control" name="email" value={email} onChange={this.changeHandler}
+                        <input type="text"  className="form-control" name="id" value={id} onChange={this.changeHandler}
                                aria-describedby="emailHelp" /><br/>
-                        <input type="text" className="form-control" name="username" value={username} onChange={this.changeHandler}
-                               aria-describedby="emailHelp" /><br/>
-                        <input type="text" className="form-control" name="password" value={password}  onChange={this.changeHandler}
+                        <input type="text" className="form-control" name="description" value={description} onChange={this.changeHandler}
                                aria-describedby="emailHelp" /><br/>
                         <button type="submit" className="btn btn-success">Submit</button>
                     {/*</div>*/}
