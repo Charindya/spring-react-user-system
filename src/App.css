@@ -35,10 +35,11 @@
   border-color: #323E5B!important;
 }
 
-/*.btn-success {*/
-  /*background-color: #07C75A;*/
-  /*border-color: #07C75A;*/
-/*}*/
+.btn-success {
+  background-color: #07C75A;
+  border-color: #07C75A;
+  padding: 10px;
+}
 
 
 .bg-primary{
@@ -52,4 +53,8 @@
 .table-light{
   background-color: #FCFCFC!important;
   color: #282c34!important;
+}
+
+.navbar {
+  color: blue;
 }

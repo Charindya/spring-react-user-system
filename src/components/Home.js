@@ -59,12 +59,10 @@ export class Home extends React.Component {
                         <Navbar.Brand href="#">Christmas Checklist</Navbar.Brand>
                     </Container>
                 </Navbar>
-                <br/>
-                <div style={{marginLeft: '1200px'}}>
+                <div style={{marginLeft: '1200px', padding:'10px'}}>
                         <Link to="/adduser"><Button color="success">Add User</Button></Link>
-                    </div><br/>
+                    </div>
                     <div className="App-intro" >
-                        <br/>
                         <Table className="table table-light ">
                             <thead style={{backgroundColor: "#323E5B", color:"white"}}>
                                 <tr>
