@@ -58,3 +58,25 @@
 .navbar {
   color: blue;
 }
+
+.form{
+  background-color: #FCFCFC;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding:20px;
+  margin-top: 1em;
+}
+
+.return {
+  margin-right: 1200px;
+  padding: 10px;
+}
+
+.list-group-item{
+  background-color: #FCFCFC!important;
+}
+.list-group-item:hover{
+  background-color: white!important;
+}

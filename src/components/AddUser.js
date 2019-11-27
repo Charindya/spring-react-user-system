@@ -49,12 +49,10 @@ export class AddUser extends React.Component {
                 <Alert variant="success" bg-color="dark">
                     <Alert.Heading>Item successfully added to wishlist! Get shopping!</Alert.Heading>
                 </Alert>
-                <header className="App-header">
 
                     <br/>
-                    <Link to="/"><Button color="warning">Return to Home</Button></Link>
+                    <Link to="/"><Button className="return" color="warning">Return to Home</Button></Link>
                     <br/>
-                </header>
             </div>)
         } else if(success=="false") {
             return(
@@ -62,14 +60,13 @@ export class AddUser extends React.Component {
                     <Alert variant="danger" bg-color="dark">
                         <Alert.Heading>User already exists!</Alert.Heading>
                     </Alert>
-                    <Navbar expand="lg" variant="dark" bg="dark">
+                    <Navbar expand="lg" variant="dark" bg="primary">
                         <Container>
                             <Navbar.Brand href="#">Christmas Checklist</Navbar.Brand>
                         </Container>
                     </Navbar>
-                    <header className="App-header">
                         <br/>
-                        <Link to="/"><Button color="warning">Return to Home</Button></Link>
+                        <Link to="/list"><Button className="return" color="warning">Return to Home</Button></Link>
                         <br/>
 
                         <form onSubmit={this.submitHandler}>
@@ -82,34 +79,31 @@ export class AddUser extends React.Component {
                             <button type="submit" className="btn btn-success">Submit</button>
                             {/*</div>*/}
                         </form>
-                    </header>
-
                 </div>
             )
         }
         return(
             <div>
-                <Navbar expand="lg" variant="dark" bg="dark">
+                <Navbar expand="lg" variant="dark" bg="primary">
                     <Container>
                         <Navbar.Brand href="#">Christmas Checklist</Navbar.Brand>
                     </Container>
                 </Navbar>
-                <header className="App-header">
                     <br/>
-                    <Link to="/"><Button color="warning">Return to Home</Button></Link>
+                    <Link to="/"><Button className="return" color="warning">Return to Home</Button></Link>
                     <br/>
 
-                <form onSubmit={this.submitHandler}>
+                <form className="form" onSubmit={this.submitHandler} >
                     {/*<div className="form-group">*/}
-                        <h3>Add User</h3>
+                        <h3 style={{padding:"10px"}}>Add User</h3>
+                    <br/>
                         <input type="text" className="form-control" name="id" value={id} onChange={this.changeHandler}
                                aria-describedby="emailHelp" placeholder="Enter email"/><br/>
                         <input type="text" className="form-control" name="description" value={description} onChange={this.changeHandler}
                                aria-describedby="emailHelp" placeholder="Enter username"/><br/>
-                        <button type="submit" className="btn btn-success">Submit</button>
+                        <button type="submit" className="btn btn-primary">Submit</button>
                     {/*</div>*/}
                 </form>
-                </header>
 
             </div>
         )

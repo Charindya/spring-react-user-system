@@ -3,6 +3,7 @@ import {AddUser} from "./components/AddUser";
 import {Home} from "./components/Home";
 import {Link, BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {UpdateUser} from "./components/UpdateUser";
+import {ListHome} from "./components/ListHome";
 
 class App extends Component {
   state = {
@@ -35,7 +36,8 @@ class App extends Component {
         <div className="App">
            <Router>
                <Switch>
-                   <Route path="/" exact component={Home}/>
+                   <Route path="/list" exact component={Home}/>
+                   <Route path="/" exact component={ListHome}/>
                    <Route path="/adduser" component={AddUser}/>
                    <Route path="/edituser" component={UpdateUser}/>
 

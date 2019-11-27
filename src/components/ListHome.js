@@ -7,9 +7,10 @@ import '../App.css';
 import Table from "react-bootstrap/Table";
 import {Link} from "react-router-dom";
 
-export class Home extends React.Component {
+export class ListHome extends React.Component {
     state = {
         isLoading: true,
+        listId: '',
         name: '',
         groups: []
     };
@@ -22,8 +23,8 @@ export class Home extends React.Component {
 
     componentDidMount() {
         document.body.classList.add("backgrundyus");
-        const {name}  = this.props.location.state;
-        fetch('/list?id='+name)
+
+        fetch('/lists')
             .then(response => response.json())
             .then(json => this.setState({ isLoading: false, groups:json }));
 
@@ -47,7 +48,7 @@ export class Home extends React.Component {
 
 
     render() {
-        const {groups, isLoading} = this.state;
+        const {groups, isLoading, listId} = this.state;
 
         if (isLoading) {
             return <p>Loading...</p>;
@@ -60,31 +61,18 @@ export class Home extends React.Component {
                     </Container>
                 </Navbar>
                 <div style={{marginLeft: '1200px', padding:'10px'}}>
-                        <Link to="/adduser"><Button color="success">Add User</Button></Link>
-                    </div>
-                    <div className="App-intro" >
-                        <Table className="table table-light ">
-                            <thead style={{backgroundColor: "#323E5B", color:"white"}}>
-                                <tr>
-                                    <th>Task</th>
-                                    <th>Update</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
-                            {groups.listItems.map(item => (
-                                <tr>
-                                    <td key={item.id}>{item.description}</td>
-                                    <td ><Link to={{
-                                        pathname: "/edituser",
-                                        state: {
-                                            name: item.id
-                                        }}} ><Button color="primary">Update</Button></Link><br/></td>
-                                    <td ><Button  onClick={this.deleteUser}  value={item.id} color="secondary" variant="primary">Delete</Button></td>
-                                </tr>
-                            ))}
-                        </Table>
+                    <Link to="/adduser"><Button color="success">Add List</Button></Link>
+                </div>
 
-                    </div>
+                <div className="list-group">
+                    {groups.map(item => (
+                        <Link to={{
+                            pathname: "/list",
+                            state: {
+                                name: item.id
+                            }}} ><a href="#" className="list-group-item list-group-item-action">{item.checkListName}</a></Link>
+                    ))}
+                </div>
             </div>
         )
     }

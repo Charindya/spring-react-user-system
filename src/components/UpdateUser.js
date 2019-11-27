@@ -19,11 +19,12 @@ export class UpdateUser extends React.Component {
 
     componentDidMount() {
         const {name}  = this.props.location.state;
+        console.log("name:" + name);
         fetch('/listItem?id='+name)
             .then(response => response.json())
             .then(json => this.setState({  id:json.id, description:json.description,  groups:json }));
         console.log("yooyoyo");
-        console.log(name);
+        console.log(this.state.description);
     }
 
     changeHandler = e => {
@@ -55,27 +56,25 @@ export class UpdateUser extends React.Component {
 
         return(
             <div>
-                <Navbar expand="lg" variant="dark" bg="dark">
+                <Navbar expand="lg" variant="dark" bg="primary">
                     <Container>
                         <Navbar.Brand href="#">Christmas Checklist</Navbar.Brand>
                     </Container>
                 </Navbar>
-                <header className="App-header">
                     <br/>
-                    <Link to="/"><Button color="warning">Return to Home</Button></Link>
+                    <Link to="/list"><Button color="warning">Return to Home</Button></Link>
                     <br/>
 
-                <form onSubmit={this.updateHandler}>
+                <form className="form" onSubmit={this.updateHandler}>
                     {/*<div className="form-group">*/}
                         <h3>Update User</h3>
                         <input type="text"  className="form-control" name="id" value={id} onChange={this.changeHandler}
                                aria-describedby="emailHelp" /><br/>
                         <input type="text" className="form-control" name="description" value={description} onChange={this.changeHandler}
                                aria-describedby="emailHelp" /><br/>
-                        <button type="submit" className="btn btn-success">Submit</button>
+                        <button type="submit" className="btn btn-primary">Submit</button>
                     {/*</div>*/}
                 </form>
-                </header>
 
             </div>
         )
