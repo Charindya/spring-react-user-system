@@ -5,13 +5,11 @@ import Container from 'react-bootstrap/Container'
 import {Button} from "reactstrap";
 import {Link} from "react-router-dom";
 import axios from "axios";
-import Alert from 'react-bootstrap/Alert'
 import {SuccessAlert} from "./SuccessAlert";
 import {FailureAlert} from "./FailureAlert";
 export class AddList extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             id: '',
             checkListName: '',
@@ -27,19 +25,15 @@ export class AddList extends React.Component {
 
     submitHandler = e => {
         e.preventDefault();
-        console.log("hi");
         console.log(this.state);
         axios.post("/list", this.state)
             .then(response=> {
                 console.log(response);
                 this.setState({success: "true"});
-
             })
             .catch(error => {
                 console.log(error);
                 this.setState({success: "false"});
-
-                // alert("User already exists! Please create a new user!");
             })
     };
 
@@ -66,7 +60,6 @@ export class AddList extends React.Component {
                     <br/>
 
                 <form className="form" onSubmit={this.submitHandler} >
-                    {/*<div className="form-group">*/}
                         <h3 style={{padding:"10px"}}>Add User</h3>
                     <br/>
                         <input type="text" className="form-control" name="id" value={id} onChange={this.changeHandler}
@@ -74,7 +67,6 @@ export class AddList extends React.Component {
                         <input type="text" className="form-control" name="checkListName" value={checkListName} onChange={this.changeHandler}
                                aria-describedby="emailHelp" placeholder="Enter username"/><br/>
                         <button type="submit" className="btn btn-primary">Submit</button>
-                    {/*</div>*/}
                 </form>
 
             </div>

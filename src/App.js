@@ -1,8 +1,8 @@
 import React, { Component } from 'react';import './App.css';
-import {AddUser} from "./components/AddUser";
+import {AddTask} from "./components/AddTask";
 import {Home} from "./components/Home";
 import {Link, BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import {UpdateUser} from "./components/UpdateUser";
+import {UpdateTask} from "./components/UpdateTask";
 import {ListHome} from "./components/ListHome";
 import {AddList} from "./components/AddList";
 class App extends Component {
@@ -39,8 +39,8 @@ class App extends Component {
                    <Route path="/list" exact component={Home}/>
                    <Route path="/addlist" exact component={AddList}/>
                    <Route path="/" exact component={ListHome}/>
-                   <Route path="/adduser" component={AddUser}/>
-                   <Route path="/edituser" component={UpdateUser}/>
+                   <Route path="/adduser" component={AddTask}/>
+                   <Route path="/edituser" component={UpdateTask}/>
 
                </Switch>
             </Router>

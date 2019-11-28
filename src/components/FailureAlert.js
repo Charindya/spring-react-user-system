@@ -19,8 +19,6 @@ export class FailureAlert extends React.Component {
 
     render(){
         const {message, pListId, link} = this.state;
-
-        console.log("p: " + pListId);
         return(
             <div>
                 <Alert variant="danger" bg-color="dark">
@@ -37,10 +35,9 @@ export class FailureAlert extends React.Component {
                         pathname: link,
                         state: {
                             name: pListId
-                        }}} ><Button className="return" color="warning">Return to Home</Button></Link>
-                <br/>
+                        }}} ><Button className="return" color="warning">Return to Home</Button>
+                </Link><br/>
             </div>
         )
-        }
-
+    }
 }

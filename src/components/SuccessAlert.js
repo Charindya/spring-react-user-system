@@ -4,7 +4,6 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import {Button} from "reactstrap";
 import {Link} from "react-router-dom";
-import axios from "axios";
 import Alert from 'react-bootstrap/Alert'
 export class SuccessAlert extends React.Component {
     constructor(props) {
@@ -19,7 +18,6 @@ export class SuccessAlert extends React.Component {
 
     render(){
         const {message, pListId, link} = this.state;
-
             return(<div>
                 <Alert variant="success" bg-color="dark">
                     <Alert.Heading>{message}</Alert.Heading>
@@ -28,15 +26,16 @@ export class SuccessAlert extends React.Component {
                     <Container>
                         <Navbar.Brand href="#">Christmas Checklist</Navbar.Brand>
                     </Container>
-                </Navbar>                <br/>
+                </Navbar> <br/>
                 <Link
                     to={{
                         pathname: link,
                         state: {
                             name: pListId
-                        }}} ><Button className="return" color="warning">Return to Home</Button></Link>
-                <br/>
-            </div>)
+                        }}} ><Button className="return" color="warning">Return to Home</Button>
+                </Link><br/>
+            </div>
+            )
         }
 
 }

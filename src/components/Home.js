@@ -14,35 +14,24 @@ export class Home extends React.Component {
         name: '',
         groups: []
     };
-    //
-    // async componentDidMount() {
-    //   const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
-    //   const body = await response.json();
-    //   this.setState({ groups: body, isLoading: false });
-    // }
 
     componentDidMount() {
-        document.body.classList.add("backgrundyus");
+        document.body.classList.add("background");
         const name  = this.props.location.state.name;
         fetch('/list?id='+name)
             .then(response => response.json())
             .then(json => this.setState({ isLoading: false, groups:json , listId:json.id}));
-
-        console.log("yooyoyo");
     }
 
     deleteListItem(e) {
         e.preventDefault();
-        console.log("lo");
         console.log(e.target.value);
         axios.delete("listItem?id=" + e.target.value)
             .then(res => {
                 console.log(res);
-                console.log(res.data);
             })
             .catch(error => {
                 console.log(error);
-                console.log("ERROR!");
             })
     }
 
@@ -53,18 +42,14 @@ export class Home extends React.Component {
         axios.delete("list?id=" + e.target.value)
             .then(res => {
                 console.log(res);
-                console.log(res.data);
             })
             .catch(error => {
                 console.log(error);
-                console.log("ERROR!");
             })
     }
 
-
     render() {
         const {groups, isLoading, listId} = this.state;
-
         if (isLoading) {
             return <p>Loading...</p>;
         }
@@ -88,30 +73,29 @@ export class Home extends React.Component {
 
                 <Button  onClick={this.deleteList}  value={groups.id} color="secondary" variant="primary">Delete</Button>
 
-                    <div className="App-intro" >
-                        <Table className="table table-light ">
-                            <thead style={{backgroundColor: "#323E5B", color:"white"}}>
-                                <tr>
-                                    <th>Task</th>
-                                    <th>Update</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
-                            {groups.listItems.map(item => (
-                                <tr>
-                                    <td key={item.id}>{item.description}</td>
-                                    <td ><Link to={{
-                                        pathname: "/edituser",
-                                        state: {
-                                            name: item.id,
-                                            event: listId
-                                        }}} ><Button color="primary">Update</Button></Link><br/></td>
-                                    <td ><Button  onClick={this.deleteListItem}  value={item.id} color="secondary" variant="primary">Delete</Button></td>
-                                </tr>
-                            ))}
-                        </Table>
-
-                    </div>
+                <div className="App-intro" >
+                    <Table className="table table-light ">
+                        <thead style={{backgroundColor: "#323E5B", color:"white"}}>
+                            <tr>
+                                <th>Task</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        {groups.listItems.map(item => (
+                            <tr>
+                                <td key={item.id}>{item.description}</td>
+                                <td ><Link to={{
+                                    pathname: "/edituser",
+                                    state: {
+                                        name: item.id,
+                                        event: listId
+                                    }}} ><Button color="primary">Update</Button></Link><br/></td>
+                                <td ><Button  onClick={this.deleteListItem}  value={item.id} color="secondary" variant="primary">Delete</Button></td>
+                            </tr>
+                        ))}
+                    </Table>
+                </div>
             </div>
         )
     }

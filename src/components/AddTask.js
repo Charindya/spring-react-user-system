@@ -5,10 +5,9 @@ import Container from 'react-bootstrap/Container'
 import {Button} from "reactstrap";
 import {Link} from "react-router-dom";
 import axios from "axios";
-import Alert from 'react-bootstrap/Alert'
 import {SuccessAlert} from "./SuccessAlert";
 import {FailureAlert} from "./FailureAlert";
-export class AddUser extends React.Component {
+export class AddTask extends React.Component {
     constructor(props) {
         super(props);
 
@@ -28,25 +27,20 @@ export class AddUser extends React.Component {
 
     submitHandler = e => {
         e.preventDefault();
-        console.log("hi");
         console.log(this.state);
         axios.post(this.state.pListId+"/listItem", this.state)
             .then(response=> {
                 console.log(response);
                 this.setState({success: "true"});
-
             })
             .catch(error => {
                 console.log("Error: " + error);
                 this.setState({success: "false"});
-
-                // alert("User already exists! Please create a new user!");
             })
     };
 
-
     render(){
-        const {id, description, pListId, success} = this.state;
+        const {description, pListId, success} = this.state;
         if(success=="true"){
             return(
                 <SuccessAlert message="Item successfully added to wishlist! Get shopping!" pListId={pListId} link="/list"/>
@@ -69,19 +63,15 @@ export class AddUser extends React.Component {
                         pathname: "/list",
                         state: {
                             name: pListId
-                        }}} ><Button className="return" color="warning">Return to Home</Button></Link>
-                    <br/>
+                        }}} ><Button className="return" color="warning">Return to Home</Button>
+                </Link><br/>
 
                 <form className="form" onSubmit={this.submitHandler} >
-                    {/*<div className="form-group">*/}
-                        <h3 style={{padding:"10px"}}>Add Task</h3>
-                    <br/>
-                        <input type="text" className="form-control" name="description" value={description} onChange={this.changeHandler}
-                               aria-describedby="emailHelp" placeholder="Enter username"/><br/>
-                        <button type="submit" className="btn btn-primary">Submit</button>
-                    {/*</div>*/}
-                </form>
-
+                    <h3 style={{padding:"10px"}}>Add Task</h3><br/>
+                    <input type="text" className="form-control" name="description" value={description} onChange={this.changeHandler}
+                           aria-describedby="emailHelp" placeholder="Enter username"/><br/>
+                    <button type="submit" className="btn btn-primary">Submit</button>
+               </form>
             </div>
         )
     }
