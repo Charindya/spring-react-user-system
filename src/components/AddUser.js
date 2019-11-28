@@ -64,8 +64,6 @@ export class AddUser extends React.Component {
                     {/*<div className="form-group">*/}
                         <h3 style={{padding:"10px"}}>Add User</h3>
                     <br/>
-                        <input type="text" className="form-control" name="id" value={id} onChange={this.changeHandler}
-                               aria-describedby="emailHelp" placeholder="Enter email"/><br/>
                         <input type="text" className="form-control" name="description" value={description} onChange={this.changeHandler}
                                aria-describedby="emailHelp" placeholder="Enter username"/><br/>
                         <button type="submit" className="btn btn-primary">Submit</button>

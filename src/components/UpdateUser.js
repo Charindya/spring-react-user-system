@@ -45,14 +45,15 @@ export class UpdateUser extends React.Component {
             .then(response=> {
                 console.log(response);
                 this.setState({success: "true"});
+                alert("User already exists! Please create a new user!");
 
             })
             .catch(error => {
                 console.log( error);
                 this.setState({success: "false"});
 
-                // alert("User already exists! Please create a new user!");
             })
+
     };
 
     render(){
@@ -76,8 +77,6 @@ export class UpdateUser extends React.Component {
                 <form className="form" onSubmit={this.updateHandler}>
                     {/*<div className="form-group">*/}
                         <h3>Update User</h3>
-                        <input type="text"  className="form-control" name="id" value={id} onChange={this.changeHandler}
-                               aria-describedby="emailHelp" /><br/>
                         <input type="text" className="form-control" name="description" value={description} onChange={this.changeHandler}
                                aria-describedby="emailHelp" /><br/>
                         <button type="submit" className="btn btn-primary">Submit</button>

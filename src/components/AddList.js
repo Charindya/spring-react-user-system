@@ -71,7 +71,7 @@ export class AddList extends React.Component {
 
                         <form onSubmit={this.submitHandler}>
                             {/*<div className="form-group">*/}
-                            <h3>Add User</h3>
+                            <h3>Add List</h3>
                             <input type="email" className="form-control" name="id" value={id} onChange={this.changeHandler}
                                    aria-describedby="emailHelp" placeholder="Enter email"/><br/>
                             <input type="text" className="form-control" name="checkListName" value={checkListName} onChange={this.changeHandler}
