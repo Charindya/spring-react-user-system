@@ -60,10 +60,10 @@ export class AddList extends React.Component {
                     <br/>
 
                 <form className="form" onSubmit={this.submitHandler} >
-                        <h3 style={{padding:"10px"}}>Add User</h3>
+                        <h3 style={{padding:"10px"}}>Add List</h3>
                     <br/>
                         <input type="text" className="form-control" name="checkListName" value={checkListName} onChange={this.changeHandler}
-                               aria-describedby="emailHelp" placeholder="Enter username"/><br/>
+                               aria-describedby="emailHelp" placeholder="Enter list name"/><br/>
                         <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
 

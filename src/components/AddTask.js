@@ -69,7 +69,7 @@ export class AddTask extends React.Component {
                 <form className="form" onSubmit={this.submitHandler} >
                     <h3 style={{padding:"10px"}}>Add Task</h3><br/>
                     <input type="text" className="form-control" name="description" value={description} onChange={this.changeHandler}
-                           aria-describedby="emailHelp" placeholder="Enter username"/><br/>
+                           aria-describedby="emailHelp" placeholder="Enter task description"/><br/>
                     <button type="submit" className="btn btn-primary">Submit</button>
                </form>
             </div>
