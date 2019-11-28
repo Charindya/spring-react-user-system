@@ -26,26 +26,32 @@ export class Home extends React.Component {
     deleteListItem(e) {
         e.preventDefault();
         console.log(e.target.value);
-        axios.delete("listItem?id=" + e.target.value)
-            .then(res => {
-                console.log(res);
-            })
-            .catch(error => {
-                console.log(error);
-            })
+        if(window.confirm('Are you sure?')) {
+            axios.delete("listItem?id=" + e.target.value)
+                .then(res => {
+                    console.log(res);
+                    window.location.reload();
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        }
     }
 
     deleteList(e) {
         e.preventDefault();
         console.log("lo");
         console.log(e.target.value);
-        axios.delete("list?id=" + e.target.value)
-            .then(res => {
-                console.log(res);
-            })
-            .catch(error => {
-                console.log(error);
-            })
+        if(window.confirm('Are you sure?')) {
+            axios.delete("list?id=" + e.target.value)
+                .then(res => {
+                    console.log(res);
+                    window.location="/";
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        }
     }
 
     render() {
