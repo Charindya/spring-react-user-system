@@ -6,6 +6,8 @@ import {Button} from "reactstrap";
 import {Link} from "react-router-dom";
 import axios from "axios";
 import Alert from 'react-bootstrap/Alert'
+import {SuccessAlert} from "./SuccessAlert";
+import {FailureAlert} from "./FailureAlert";
 export class AddUser extends React.Component {
     constructor(props) {
         super(props);
@@ -14,6 +16,7 @@ export class AddUser extends React.Component {
             id: '',
             pListId : this.props.location.state.name,
             description: '',
+            success: ''
         }
     }
 
@@ -41,9 +44,18 @@ export class AddUser extends React.Component {
             })
     };
 
-    render(){
-        const {id, description, pListId} = this.state;
 
+    render(){
+        const {id, description, pListId, success} = this.state;
+        if(success=="true"){
+            return(
+                <SuccessAlert message="Item successfully added to wishlist! Get shopping!" pListId={pListId} link="/list"/>
+            )
+        } else if(success=="false") {
+            return(
+                <FailureAlert message="Item was not succesfully added - please contact administration." pListId={pListId} link="/list"/>
+            )
+        }
         return(
             <div>
                 <Navbar expand="lg" variant="dark" bg="primary">
@@ -62,7 +74,7 @@ export class AddUser extends React.Component {
 
                 <form className="form" onSubmit={this.submitHandler} >
                     {/*<div className="form-group">*/}
-                        <h3 style={{padding:"10px"}}>Add User</h3>
+                        <h3 style={{padding:"10px"}}>Add Task</h3>
                     <br/>
                         <input type="text" className="form-control" name="description" value={description} onChange={this.changeHandler}
                                aria-describedby="emailHelp" placeholder="Enter username"/><br/>

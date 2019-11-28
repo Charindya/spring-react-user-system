@@ -6,6 +6,8 @@ import {Button} from "reactstrap";
 import {Link} from "react-router-dom";
 import axios from "axios";
 import Alert from 'react-bootstrap/Alert'
+import {SuccessAlert} from "./SuccessAlert";
+import {FailureAlert} from "./FailureAlert";
 export class AddList extends React.Component {
     constructor(props) {
         super(props);
@@ -44,42 +46,12 @@ export class AddList extends React.Component {
     render(){
         const {id, checkListName, success} = this.state;
         if(success=="true"){
-            console.log("supperino");
-            return(<div>
-                <Alert variant="success" bg-color="dark">
-                    <Alert.Heading>Item successfully added to wishlist! Get shopping!</Alert.Heading>
-                </Alert>
-
-                    <br/>
-                    <Link to="/"><Button className="return" color="warning">Return to Home</Button></Link>
-                    <br/>
-            </div>)
+            return(
+                <SuccessAlert message="New list created!" link="/"/>
+            )
         } else if(success=="false") {
             return(
-                <div>
-                    <Alert variant="danger" bg-color="dark">
-                        <Alert.Heading>User already exists!</Alert.Heading>
-                    </Alert>
-                    <Navbar expand="lg" variant="dark" bg="primary">
-                        <Container>
-                            <Navbar.Brand href="#">Christmas Checklist</Navbar.Brand>
-                        </Container>
-                    </Navbar>
-                        <br/>
-                        <Link to="/list"><Button className="return" color="warning">Return to Home</Button></Link>
-                        <br/>
-
-                        <form onSubmit={this.submitHandler}>
-                            {/*<div className="form-group">*/}
-                            <h3>Add List</h3>
-                            <input type="email" className="form-control" name="id" value={id} onChange={this.changeHandler}
-                                   aria-describedby="emailHelp" placeholder="Enter email"/><br/>
-                            <input type="text" className="form-control" name="checkListName" value={checkListName} onChange={this.changeHandler}
-                                   aria-describedby="emailHelp" placeholder="Enter username"/><br/>
-                            <button type="submit" className="btn btn-success">Submit</button>
-                            {/*</div>*/}
-                        </form>
-                </div>
+                <FailureAlert message="List was not succesfully created - please contact administration."  link="/"/>
             )
         }
         return(

@@ -74,6 +74,15 @@
   padding: 10px;
 }
 
+.add {
+  margin-left: 1200px;
+  padding:10px;
+}
+
+.add , .return {
+  display: inline-block;
+}
+
 .list-group-item{
   background-color: #FCFCFC!important;
 }

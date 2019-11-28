@@ -6,6 +6,8 @@ import {Button} from "reactstrap";
 import {Link} from "react-router-dom";
 import axios from "axios";
 import Alert from 'react-bootstrap/Alert'
+import {SuccessAlert} from "./SuccessAlert";
+import {FailureAlert} from "./FailureAlert";
 export class UpdateUser extends React.Component {
     constructor(props) {
         super(props);
@@ -45,8 +47,9 @@ export class UpdateUser extends React.Component {
             .then(response=> {
                 console.log(response);
                 this.setState({success: "true"});
-                alert("User already exists! Please create a new user!");
-
+                e.preventDefault();
+                // alert("User already exists! Please create a new user!");
+                return (<h1>sup</h1>);
             })
             .catch(error => {
                 console.log( error);
@@ -57,8 +60,16 @@ export class UpdateUser extends React.Component {
     };
 
     render(){
-        const {groups, id, description, pListId} = this.state;
-
+        const {groups, id, description, pListId, success} = this.state;
+        if(success=="true"){
+            return(
+                <SuccessAlert message="Item was sucessfully updated!" pListId={pListId} link="/list"/>
+            )
+        } else if(success=="false") {
+            return(
+                <FailureAlert message="Item was not succesfully updated - please contact administration." pListId={pListId} link="/list"/>
+            )
+        }
         return(
             <div>
                 <Navbar expand="lg" variant="dark" bg="primary">

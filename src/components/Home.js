@@ -75,13 +75,17 @@ export class Home extends React.Component {
                         <Navbar.Brand href="#">Christmas Checklist</Navbar.Brand>
                     </Container>
                 </Navbar>
-                <div style={{marginLeft: '1200px', padding:'10px'}}>
-                    <Link to={{
+                <div style={{display: "inline-block "}}>
+                    <Link className="add" to={{
                         pathname: "/adduser",
                         state: {
                             name: this.state.groups.id
-                        }}} ><Button color="success">Add Task</Button></Link>
+                        }}} ><Button id="addTaskButton" color="success">Add Task</Button></Link>
+                    <Link className="return" to={{
+                        pathname: "/",
+                        }} ><Button id="returnHomeButton"  color="warning">Return to Home</Button></Link>
                     </div>
+
                 <Button  onClick={this.deleteList}  value={groups.id} color="secondary" variant="primary">Delete</Button>
 
                     <div className="App-intro" >
