@@ -66,18 +66,22 @@ export class List extends React.Component {
                         <Navbar.Brand href="#">Christmas Checklist</Navbar.Brand>
                     </Container>
                 </Navbar>
-                <div style={{display: "inline-block "}}>
-                    <Link className="add" to={{
-                        pathname: "/adduser",
-                        state: {
-                            name: this.state.groups.id
-                        }}} ><Button id="addTaskButton" color="success">Add Task</Button></Link>
-                    <Link className="return" to={{
+                <table>
+                    <tr>
+                        <th>
+                    <Link id="returnId" className="return" to={{
                         pathname: "/",
-                        }} ><Button id="returnHomeButton"  color="warning">Return to Home</Button></Link>
-                    </div>
+                    }} ><Button id="returnHomeButton"  color="warning">Return to Home</Button></Link></th>
+                        <th>
+                            <Link id="addId" className="add" to={{
+                                pathname: "/adduser",
+                                state: {
+                                    name: this.state.groups.id
+                                }}} ><Button id="addTaskButton" color="success">Add Task</Button></Link></th>
 
-                <Button  onClick={this.deleteList}  value={groups.id} color="secondary" variant="primary">Delete</Button>
+                    </tr>
+</table>
+                <Button className="delete-list" onClick={this.deleteList}  value={groups.id} color="danger" variant="primary">Delete</Button>
 
                 <div className="App-intro" >
                     <Table className="table table-light ">

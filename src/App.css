@@ -22,17 +22,15 @@
   color: #09d3ac;
 }
 
-
-
-.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger{
-  background-color: #09d3ac;
-  border-color: #09d3ac;
-
-}
-
 .btn-primary{
   background-color: #323E5B!important;
   border-color: #323E5B!important;
+}
+.btn-warning{
+  color: white!important;
+  background-color: chocolate!important;
+  border-color: chocolate!important;
+
 }
 
 .btn-success {
@@ -70,13 +68,15 @@
 }
 
 .return {
-  margin-right: 1200px;
+  margin-right: 1050px;
   padding: 10px;
+  width: max-content;
+  color: #FCFCFC!important;
 }
 
 .add {
-  margin-left: 1200px;
   padding:10px;
+  width: 300px;
 }
 
 .add , .return {
@@ -88,4 +88,14 @@
 }
 .list-group-item:hover{
   background-color: white!important;
+}
+
+.delete-list{
+  margin-left: 1300px;
+  padding:10px;
+  width: 100px;
+}
+
+#addId, #returnId{
+  display: inline-block;
 }
