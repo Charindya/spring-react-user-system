@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c3f8186-7a35-4905-b851-20905bcecc1c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/AddList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AddUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ListHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListHome.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UpdateUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UpdateUser.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="75" selection-start-line="75" selection-end-line="75" />
+            <state relative-caret-position="217">
+              <caret line="82" column="57" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="57" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -29,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/ListHome.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/AddUser.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
+            <state relative-caret-position="350">
+              <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -44,41 +45,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/UpdateUser.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1117">
-              <caret line="74" column="24" lean-forward="true" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+            <state relative-caret-position="208">
+              <caret line="15" column="18" selection-start-line="15" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/AddUser.js">
+        <entry file="file://$PROJECT_DIR$/src/components/ListHome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="68" column="39" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
+            <state relative-caret-position="357">
+              <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
-              <folding>
-                <element signature="e#41#60#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -87,13 +67,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>jug</find>
-      <find>AddUser</find>
       <find>loc</find>
       <find>table</find>
       <find>users</find>
       <find>email</find>
-      <find>delete</find>
       <find>header</find>
       <find>70</find>
       <find>christm</find>
@@ -101,15 +78,25 @@
       <find>return</find>
       <find>return to</find>
       <find>primary</find>
-      <find>hover</find>
       <find>form</find>
-      <find>add user</find>
       <find>link</find>
       <find>list</find>
       <find>'/'</find>
-      <find>&quot;/&quot;</find>
       <find>&quot;/</find>
       <find>update</find>
+      <find>add t</find>
+      <find>description</find>
+      <find>add task</find>
+      <find>this.d</find>
+      <find>hover</find>
+      <find>delete</find>
+      <find>add user</find>
+      <find>&quot;/&quot;</find>
+      <find>param1</find>
+      <find>add</find>
+      <find>return to h</find>
+      <find>return</find>
+      <find>plistid</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -124,11 +111,12 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/components/AddUser.js" />
+        <option value="$PROJECT_DIR$/src/components/AddList.js" />
         <option value="$PROJECT_DIR$/src/components/ListHome.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/UpdateUser.js" />
         <option value="$PROJECT_DIR$/src/components/Home.js" />
+        <option value="$PROJECT_DIR$/src/components/AddUser.js" />
       </list>
     </option>
   </component>
@@ -176,7 +164,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574867177095" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574921171576" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -212,12 +200,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574575399769</updated>
-      <workItem from="1574575401252" duration="39767000" />
+      <workItem from="1574575401252" duration="47157000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39767000" />
+    <option name="totallyTimeSpent" value="47157000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1436" height="874" extended-state="6" />
@@ -288,27 +276,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AddList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="57" column="19" lean-forward="true" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
+        <state relative-caret-position="494">
           <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+        <state relative-caret-position="245">
+          <caret line="38" column="37" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="37" />
           <folding>
             <element signature="e#41#60#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AddUser.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
-          <caret line="68" column="39" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
+          <caret line="82" column="57" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ListHome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -317,25 +322,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UpdateUser.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1117">
-          <caret line="74" column="24" lean-forward="true" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+        <state relative-caret-position="208">
+          <caret line="15" column="18" selection-start-line="15" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ListHome.js">
+    <entry file="file://$PROJECT_DIR$/src/components/AddUser.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="350">
+          <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

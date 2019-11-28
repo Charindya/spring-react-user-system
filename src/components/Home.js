@@ -10,6 +10,7 @@ import {Link} from "react-router-dom";
 export class Home extends React.Component {
     state = {
         isLoading: true,
+        listId: '',
         name: '',
         groups: []
     };
@@ -22,15 +23,15 @@ export class Home extends React.Component {
 
     componentDidMount() {
         document.body.classList.add("backgrundyus");
-        const {name}  = this.props.location.state;
+        const name  = this.props.location.state.name;
         fetch('/list?id='+name)
             .then(response => response.json())
-            .then(json => this.setState({ isLoading: false, groups:json }));
+            .then(json => this.setState({ isLoading: false, groups:json , listId:json.id}));
 
         console.log("yooyoyo");
     }
 
-    deleteUser(e) {
+    deleteListItem(e) {
         e.preventDefault();
         console.log("lo");
         console.log(e.target.value);
@@ -45,9 +46,24 @@ export class Home extends React.Component {
             })
     }
 
+    deleteList(e) {
+        e.preventDefault();
+        console.log("lo");
+        console.log(e.target.value);
+        axios.delete("list?id=" + e.target.value)
+            .then(res => {
+                console.log(res);
+                console.log(res.data);
+            })
+            .catch(error => {
+                console.log(error);
+                console.log("ERROR!");
+            })
+    }
+
 
     render() {
-        const {groups, isLoading} = this.state;
+        const {groups, isLoading, listId} = this.state;
 
         if (isLoading) {
             return <p>Loading...</p>;
@@ -60,8 +76,14 @@ export class Home extends React.Component {
                     </Container>
                 </Navbar>
                 <div style={{marginLeft: '1200px', padding:'10px'}}>
-                        <Link to="/adduser"><Button color="success">Add User</Button></Link>
+                    <Link to={{
+                        pathname: "/adduser",
+                        state: {
+                            name: this.state.groups.id
+                        }}} ><Button color="success">Add Task</Button></Link>
                     </div>
+                <Button  onClick={this.deleteList}  value={groups.id} color="secondary" variant="primary">Delete</Button>
+
                     <div className="App-intro" >
                         <Table className="table table-light ">
                             <thead style={{backgroundColor: "#323E5B", color:"white"}}>
@@ -77,9 +99,10 @@ export class Home extends React.Component {
                                     <td ><Link to={{
                                         pathname: "/edituser",
                                         state: {
-                                            name: item.id
+                                            name: item.id,
+                                            event: listId
                                         }}} ><Button color="primary">Update</Button></Link><br/></td>
-                                    <td ><Button  onClick={this.deleteUser}  value={item.id} color="secondary" variant="primary">Delete</Button></td>
+                                    <td ><Button  onClick={this.deleteListItem}  value={item.id} color="secondary" variant="primary">Delete</Button></td>
                                 </tr>
                             ))}
                         </Table>

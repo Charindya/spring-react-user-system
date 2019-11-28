@@ -12,8 +12,8 @@ export class AddUser extends React.Component {
 
         this.state = {
             id: '',
+            pListId : this.props.location.state.name,
             description: '',
-            success: ''
         }
     }
 
@@ -27,14 +27,14 @@ export class AddUser extends React.Component {
         e.preventDefault();
         console.log("hi");
         console.log(this.state);
-        axios.post("/listItem", this.state)
+        axios.post(this.state.pListId+"/listItem", this.state)
             .then(response=> {
                 console.log(response);
                 this.setState({success: "true"});
 
             })
             .catch(error => {
-                console.log(error);
+                console.log("Error: " + error);
                 this.setState({success: "false"});
 
                 // alert("User already exists! Please create a new user!");
@@ -42,46 +42,8 @@ export class AddUser extends React.Component {
     };
 
     render(){
-        const {id, description, success} = this.state;
-        if(success=="true"){
-            console.log("supperino");
-            return(<div>
-                <Alert variant="success" bg-color="dark">
-                    <Alert.Heading>Item successfully added to wishlist! Get shopping!</Alert.Heading>
-                </Alert>
+        const {id, description, pListId} = this.state;
 
-                    <br/>
-                    <Link to="/"><Button className="return" color="warning">Return to Home</Button></Link>
-                    <br/>
-            </div>)
-        } else if(success=="false") {
-            return(
-                <div>
-                    <Alert variant="danger" bg-color="dark">
-                        <Alert.Heading>User already exists!</Alert.Heading>
-                    </Alert>
-                    <Navbar expand="lg" variant="dark" bg="primary">
-                        <Container>
-                            <Navbar.Brand href="#">Christmas Checklist</Navbar.Brand>
-                        </Container>
-                    </Navbar>
-                        <br/>
-                        <Link to="/list"><Button className="return" color="warning">Return to Home</Button></Link>
-                        <br/>
-
-                        <form onSubmit={this.submitHandler}>
-                            {/*<div className="form-group">*/}
-                            <h3>Add User</h3>
-                            <input type="email" className="form-control" name="id" value={id} onChange={this.changeHandler}
-                                   aria-describedby="emailHelp" placeholder="Enter email"/><br/>
-                            <input type="text" className="form-control" name="description" value={description} onChange={this.changeHandler}
-                                   aria-describedby="emailHelp" placeholder="Enter username"/><br/>
-                            <button type="submit" className="btn btn-success">Submit</button>
-                            {/*</div>*/}
-                        </form>
-                </div>
-            )
-        }
         return(
             <div>
                 <Navbar expand="lg" variant="dark" bg="primary">
@@ -90,7 +52,12 @@ export class AddUser extends React.Component {
                     </Container>
                 </Navbar>
                     <br/>
-                    <Link to="/"><Button className="return" color="warning">Return to Home</Button></Link>
+                <Link
+                    to={{
+                        pathname: "/list",
+                        state: {
+                            name: pListId
+                        }}} ><Button className="return" color="warning">Return to Home</Button></Link>
                     <br/>
 
                 <form className="form" onSubmit={this.submitHandler} >

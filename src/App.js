@@ -4,7 +4,7 @@ import {Home} from "./components/Home";
 import {Link, BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {UpdateUser} from "./components/UpdateUser";
 import {ListHome} from "./components/ListHome";
-
+import {AddList} from "./components/AddList";
 class App extends Component {
   state = {
     isLoading: true,
@@ -37,6 +37,7 @@ class App extends Component {
            <Router>
                <Switch>
                    <Route path="/list" exact component={Home}/>
+                   <Route path="/addlist" exact component={AddList}/>
                    <Route path="/" exact component={ListHome}/>
                    <Route path="/adduser" component={AddUser}/>
                    <Route path="/edituser" component={UpdateUser}/>

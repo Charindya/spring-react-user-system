@@ -61,7 +61,7 @@ export class ListHome extends React.Component {
                     </Container>
                 </Navbar>
                 <div style={{marginLeft: '1200px', padding:'10px'}}>
-                    <Link to="/adduser"><Button color="success">Add List</Button></Link>
+                    <Link to="/addlist"><Button color="success">Add List</Button></Link>
                 </div>
 
                 <div className="list-group">

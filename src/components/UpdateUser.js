@@ -13,12 +13,15 @@ export class UpdateUser extends React.Component {
         this.state = {
             id: '',
             description: '',
-            groups: []
+            pListId : this.props.location.state.event,
+
+        groups: []
         }
     }
 
     componentDidMount() {
-        const {name}  = this.props.location.state;
+        const name  = this.props.location.state.name;
+
         console.log("name:" + name);
         fetch('/listItem?id='+name)
             .then(response => response.json())
@@ -37,14 +40,15 @@ export class UpdateUser extends React.Component {
         e.preventDefault();
         console.log("hi");
         console.log("sup" + this.state.id);
-        axios.put("/listItem/"+this.state.id, this.state)
+        console.log("PlISTID:" +this.state.pListId);
+        axios.put(this.state.pListId +"/listItem", this.state)
             .then(response=> {
                 console.log(response);
                 this.setState({success: "true"});
 
             })
             .catch(error => {
-                console.log(error);
+                console.log( error);
                 this.setState({success: "false"});
 
                 // alert("User already exists! Please create a new user!");
@@ -52,7 +56,7 @@ export class UpdateUser extends React.Component {
     };
 
     render(){
-        const {groups, id, description} = this.state;
+        const {groups, id, description, pListId} = this.state;
 
         return(
             <div>
@@ -62,7 +66,11 @@ export class UpdateUser extends React.Component {
                     </Container>
                 </Navbar>
                     <br/>
-                    <Link to="/list"><Button color="warning">Return to Home</Button></Link>
+                <Link to={{
+                    pathname: "/list",
+                    state: {
+                        name: pListId,
+                    }}} ><Button color="warning">Return to Home</Button></Link>
                     <br/>
 
                 <form className="form" onSubmit={this.updateHandler}>
