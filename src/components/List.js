@@ -7,7 +7,7 @@ import '../App.css';
 import Table from "react-bootstrap/Table";
 import {Link} from "react-router-dom";
 
-export class Home extends React.Component {
+export class List extends React.Component {
     state = {
         isLoading: true,
         listId: '',

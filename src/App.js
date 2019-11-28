@@ -1,6 +1,6 @@
 import React, { Component } from 'react';import './App.css';
 import {AddTask} from "./components/AddTask";
-import {Home} from "./components/Home";
+import {List} from "./components/List";
 import {Link, BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {UpdateTask} from "./components/UpdateTask";
 import {ListHome} from "./components/ListHome";
@@ -36,7 +36,7 @@ class App extends Component {
         <div className="App">
            <Router>
                <Switch>
-                   <Route path="/list" exact component={Home}/>
+                   <Route path="/list" exact component={List}/>
                    <Route path="/addlist" exact component={AddList}/>
                    <Route path="/" exact component={ListHome}/>
                    <Route path="/adduser" component={AddTask}/>
